@@ -1,0 +1,96 @@
+.hltsydmr{
+font-family: Impact;
+font-size: 36px;
+color: #F5A623;
+line-height: 44px;
+margin-top: 8px;
+float: left;
+margin-right: 60px;
+}
+.clr{
+	float:both;
+}
+.orta{
+	width:50%;
+	margin: 0 auto;
+}
+.bttn:HOVER{
+	margin-top:-15px;
+	margin-bottom: -15px;
+	
+}
+.bttn{
+	font-size: 20px;
+	
+}
+img{
+	margin-top:-13px;
+	margin-bottom: -15px;
+	margin-right: 25px;
+	margin-left: 25px;
+}
+.crm{
+  margin-left: 20px;
+  font-family: Phosphate-Solid;
+  font-size: 45.75px;
+  color: rgba(143,133,121,0.98);
+  line-height: 57px;
+  float: left;
+}
+.list{
+	border: 5px solid brown;
+}
+.topRect{
+  background: #353136;
+  border: 1px solid #979797;
+}
+.ayrac{
+  font-family: Phosphate-Solid;
+  font-size: 48px;
+  color: #5E5760;
+  line-height: 59px;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.error{
+	color: red;
+}
+.context{
+  padding: inherit;
+  background: #353136;
+  border: 1px solid #979797;
+  border-radius: 8px;
+  margin-top: 10%;
+
+}
+
+table{
+  margin: 15px;
+}
+.menu{
+  margin-left: 30px;
+}
+button{
+  margin-left: 20px;
+  margin-right: 20px;
+  background-image: linear-gradient(-180deg, #D8D8D8 0%, #B3B3B3 100%);
+  border: 1px solid #979797;
+  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.20), inset 0px 2px 0px 0px #FFFFFF;
+  border-radius: 6px;
+  width: 150px;
+  height: 30px;
+
+}
+.btnText{
+  font-family: AvenirNext-Bold;
+  font-size: 20.71px;
+  color: #4A4A4A;
+  line-height: 29px;
+  text-shadow: 0px 1px 0px #FFFFFF;
+}
+body{
+  background-color : orange;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

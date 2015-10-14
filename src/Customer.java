@@ -1,7 +1,6 @@
 import javax.faces.bean.*;
 
 @ManagedBean
-@ApplicationScoped
 
 public class Customer {
 
@@ -100,6 +99,7 @@ public class Customer {
 	}
 	
 	public String edit(){
+		try{
 		Operations o = new Operations();
 		Customer c= o.getCustomer(id);
 		this.id=c.id;
@@ -111,6 +111,11 @@ public class Customer {
 		this.phone=c.phone;
 		this.email=c.email;
 		return "editCustomer";
+		}
+		catch(Exception e){
+			e.printStackTrace();
+			return "unknownCustomer";
+		}
 	}
 	
 	public String makeEdit(){
@@ -120,9 +125,15 @@ public class Customer {
 	}
 	
 	public String delete(){
+		try{
 		Operations o = new Operations();
 		o.delete(id);
 		return "deletedCustomer";
+		}
+		catch(Exception e){
+			e.printStackTrace();
+			return "unknownCustomer";
+		}
 	}
 	
 }

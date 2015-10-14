@@ -5,24 +5,38 @@
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" type="text/css" href="design.css"/>
+<link rel="stylesheet" type="text/css" href="crm5.css"/>
 <title>Insert title here</title>
 </head>
 <body>
-<div class="context">
+<div class="topRect">
+	<div class="crm">CRM</div>
+	<div class="ayrac">|</div>
+	<div class="hltsydmr">hltsydmr</div>
+<div class="menu">
 <table>
 <tr><td>
-	<h:button class="button" value="New Customer" outcome="newCustomer"/>
-	</td></tr><tr><td>
-	<h:button class="button" value="Search" outcome="searchCustomer" />
-	</td></tr><tr><td>
-	<h:button class="button" value="List All Customers" outcome="listCustomers" />
-	</td></tr><tr><td>
-	<h:button class="button" value="Display and Edit Customer" outcome="displayCustomer" />
-	</td></tr><tr><td>
-	<h:button class="button" value="Delete Customer" outcome="deleteCustomer" />
-	</td></tr>
+<h:link class="bttn" outcome="newCustomer" >
+<h:graphicImage class="img" value="resources/image/add.png"></h:graphicImage>
+</h:link>
+
+<h:link class="bttn" outcome="searchCustomer" >
+<h:graphicImage class="img" value="resources/image/search.png"></h:graphicImage>
+</h:link>
+
+<h:link class="bttn" outcome="listCustomers" >
+<h:graphicImage class="img" value="resources/image/list.png"></h:graphicImage>
+</h:link>
+
+<h:link class="bttn" outcome="displayCustomer" >
+<h:graphicImage class="img" value="resources/image/edit.png"></h:graphicImage>
+</h:link>
+
+<h:link class="bttn" outcome="deleteCustomer" >
+<h:graphicImage class="img" value="resources/image/delete.png"></h:graphicImage>
+</h:link>
+</td></tr>
 </table>
-</div>
+</div></div>
 </body>
 </html>

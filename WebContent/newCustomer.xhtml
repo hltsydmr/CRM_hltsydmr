@@ -1,71 +1,99 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" type="text/css" href="design.css"/>
+<link rel="stylesheet" type="text/css" href="crm5.css" />
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="context">
-		
+	<div class="topRect">
+		<div class="crm">CRM</div>
+		<div class="ayrac">|</div>
+		<div class="hltsydmr">hltsydmr</div>
 		<div class="menu">
+			<table>
+				<tr>
+					<td><h:link class="bttn" outcome="newCustomer">
+							<h:graphicImage class="img" value="resources/image/add.png"></h:graphicImage>
+						</h:link> <h:link class="bttn" outcome="searchCustomer">
+							<h:graphicImage class="img" value="resources/image/search.png"></h:graphicImage>
+						</h:link> <h:link class="bttn" outcome="listCustomers">
+							<h:graphicImage class="img" value="resources/image/list.png"></h:graphicImage>
+						</h:link> <h:link class="bttn" outcome="displayCustomer">
+							<h:graphicImage class="img" value="resources/image/edit.png"></h:graphicImage>
+						</h:link> <h:link class="bttn" outcome="deleteCustomer">
+							<h:graphicImage class="img" value="resources/image/delete.png"></h:graphicImage>
+						</h:link></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+
+	<div class="context">
+		<div class="orta">
 			<h:form>
-				<table>
+
+				<h:panelGrid columns="3">
 				
-					<tr>
-					<td>
-					<div class="title">New Customer</div>
-					</td>
-					</tr>
-				
-					<tr>
-					<td>Name : </td>
-					<td><h:inputText value="#{customer.name}" id="name"></h:inputText></td>
-					</tr>
+					<h:outputText value="Name :"></h:outputText>
+					<h:inputText value="#{customer.name}" required="true" requiredMessage="Enter a name." validatorMessage="Name should be between 1-20 chars." id="name">
+					<f:validateLength minimum="1" maximum="20"></f:validateLength>
+					</h:inputText>
+					<h:message for="name" styleClass="error"></h:message>
 					
-					<tr>
-					<td>Surname : </td>
-					<td><h:inputText id="surname" value="#{customer.surname}"></h:inputText></td>
-					</tr>
+					<h:outputText value="Surname :"></h:outputText>
+					<h:inputText id="surname" value="#{customer.surname}" required="true" requiredMessage="Enter a surname." validatorMessage="Surname should be between 1-20 chars."><f:validateLength minimum="1" maximum="20"></f:validateLength></h:inputText>
+					<h:message for="surname" styleClass="error"></h:message>
 					
-					<tr>
-					<td>Company : </td>
-					<td><h:inputText id="company" value="#{customer.company}"></h:inputText></td>
-					</tr>
 					
-					<tr>
-					<td>Department : </td>
-					<td><h:inputText value="#{customer.department}" id="department"></h:inputText></td>
-					</tr>
+					<h:outputText value="Company :"></h:outputText>
+					<h:inputText id="company" value="#{customer.company}" required="true" requiredMessage="Enter a company name." validatorMessage="Company name should be between 1-50 chars."><f:validateLength minimum="1" maximum="50"></f:validateLength></h:inputText>
+					<h:message for="company" styleClass="error"></h:message>
 					
-					<tr>
-					<td>Position : </td>
-					<td><h:inputText id="position" value="#{customer.position}"></h:inputText></td>
-					</tr>
 					
-					<tr>
-					<td>Mobile Phone : </td>
-					<td><h:inputText id="phone" value="#{customer.phone}"></h:inputText></td>
-					</tr>
+					<h:outputText value="Department :"></h:outputText>
+					<h:inputText value="#{customer.department}"
+								id="department" required="true" requiredMessage="Enter a department name." validatorMessage="Department name should be between 1-50 chars."><f:validateLength minimum="1" maximum="50"></f:validateLength></h:inputText>
+					<h:message for="department" styleClass="error"></h:message>
 					
-					<tr>
-					<td>E-mail : </td>
-					<td><h:inputText id="email" value="#{customer.email}"></h:inputText></td>
-					</tr>
+					<h:outputText value="Position :"></h:outputText>
+					<h:inputText value="#{customer.position}"
+								id="position" required="true" requiredMessage="Enter a position name." validatorMessage="Position name should be between 1-50 chars."><f:validateLength minimum="1" maximum="50"></f:validateLength></h:inputText>
+					<h:message for="position" styleClass="error"></h:message>
 					
-					<tr>
-					<td>
-					</td>
-					<td>
-					<h:commandButton class="button" value="SIGN UP" action="#{customer.add}"></h:commandButton>
-					</td>
-					</tr>
-				</table>
+					<h:outputText value="Phone :"></h:outputText>
+					<h:inputText value="#{customer.phone}" required="true" 
+					requiredMessage="Enter a phone number" 
+					converterMessage="Enter a valid phone number."
+					validatorMessage="Phone number should be exactly 10 digits." 
+					id="phone">
+					<f:validateLength minimum="10" maximum="10"></f:validateLength>
+					<f:convertNumber></f:convertNumber>
+					</h:inputText>
+					<h:message for="phone" styleClass="error"></h:message>
+					
+					<h:outputText value="E-mail :"></h:outputText>
+					<h:inputText value="#{customer.email}"
+								id="email" required="true" requiredMessage="Enter a e-mail." 
+								validatorMessage="E-mail name should be between 1-50 chars."
+								>
+								
+								<f:validateRegex pattern="[a-z,0-9,A-Z]{1,20}[.]{0,1}[a-z,0-9,A-Z]{1,20}[@]{1}[a-z,0-9,A-Z]{1,20}[.]{1}[a-z,0-9,A-Z]{1,20}"></f:validateRegex></h:inputText>
+					<h:message for="email" styleClass="error"></h:message>
+					
+					<h:outputText />
+					<h:commandButton class="button" value="SIGN UP"
+								action="#{customer.add}"></h:commandButton>
+					
+				</h:panelGrid>
 			</h:form>
 		</div>
 	</div>
+
 
 </body>
 </html>
