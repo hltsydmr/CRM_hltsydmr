@@ -85,6 +85,8 @@ public class Operations {
 				Customer c = new Customer(rs.getString(1),rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8));
 				findList.add(c);
 			}
+			ps.close();
+			conn.close();
 		}
 		
 		catch(Exception e){
@@ -113,6 +115,8 @@ public class Operations {
 		c = new Customer(rs.getString(1),rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8));
 		System.out.println(c.getName()+","+c.getId());
 		}
+		ps.close();
+		conn.close();
 		}
 	
 		catch(Exception e){
@@ -133,7 +137,8 @@ public class Operations {
 			PreparedStatement ps = conn.prepareStatement(findSql);
 			ps.setInt(1, Integer.parseInt(id));
 			ps.execute();
-			
+			ps.close();
+			conn.close();
 			}
 		
 			catch(Exception e){
